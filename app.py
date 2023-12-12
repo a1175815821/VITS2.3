@@ -394,6 +394,16 @@ if __name__ == "__main__":
     with gr.Blocks() as app:
         with gr.Row():
             with gr.Column():
+                gr.Markdown(value="""
+               【AI孙笑川】在线语音合成（Bert-Vits2 2.0中日英）\n
+                作者：Xz乔希 https://space.bilibili.com/5859321\n
+                声音归属：孙笑川258 https://space.bilibili.com/402574397\n
+                【AI合集】https://www.modelscope.cn/studios/xzjosh/Bert-VITS2\n
+                Bert-VITS2项目：https://github.com/Stardust-minus/Bert-VITS2\n
+                使用本模型请严格遵守法律法规！\n
+                发布二创作品请标注本项目作者及链接、作品使用Bert-VITS2 AI生成！\n
+                【提示】手机端容易误触调节，请刷新恢复默认！每次生成的结果都不一样，效果不好请尝试多次生成与调节，选择最佳结果！\n             
+                """)
                 text = gr.TextArea(
                     label="输入文本内容",
                     placeholder="""
