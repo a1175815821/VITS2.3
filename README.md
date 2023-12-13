@@ -1,8 +1,8 @@
 ---
-title: AI孙笑川
-emoji: ⚡
+title: AI星瞳2.3
+emoji: ⭐
 colorFrom: yellow
-colorTo: pink
+colorTo: blue
 sdk: gradio
 sdk_version: 3.47.1
 app_file: app.py
