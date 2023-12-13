@@ -414,8 +414,6 @@ if __name__ == "__main__":
                另外，所有的语言选项都可以用'|'分割长段实现分句生成。
                     """,
                 )
-                trans = gr.Button("中翻日", variant="primary")
-                slicer = gr.Button("快速切分", variant="primary")
                 speaker = gr.Dropdown(
                     choices=speakers, value=speakers[0], label="Speaker"
                 )
@@ -497,12 +495,6 @@ if __name__ == "__main__":
                 prompt_mode,
             ],
             outputs=[text_output, audio_output],
-        )
-
-        trans.click(
-            translate,
-            inputs=[text],
-            outputs=[text],
         )
         slicer.click(
             tts_split,
