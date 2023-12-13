@@ -418,7 +418,7 @@ if __name__ == "__main__":
                     choices=speakers, value=speakers[0], label="Speaker"
                 )
                 _ = gr.Markdown(
-                    value="提示模式（Prompt mode）：可选文字提示或音频提示，用于生成文字或音频指定风格的声音。\n"
+                    value="提示模式（Prompt mode）：使用首字母大写英文单词或上传音频提示，用于生成指定风格的声音。\n"
                 )
                 prompt_mode = gr.Radio(
                     ["Text prompt", "Audio prompt"],
@@ -427,8 +427,7 @@ if __name__ == "__main__":
                 )
                 text_prompt = gr.Textbox(
                     label="Text prompt",
-                    placeholder="用文字描述生成风格。如：Happy",
-                    value="Happy",
+                    placeholder="单词描述生成风格。如：Happy",
                     visible=True,
                 )
                 audio_prompt = gr.Audio(
@@ -449,7 +448,7 @@ if __name__ == "__main__":
                 language = gr.Dropdown(
                     choices=languages, value=languages[0], label="Language"
                 )
-                btn = gr.Button("生成音频！", variant="primary")
+                btn = gr.Button("点击生成", variant="primary")
             with gr.Column():
                 with gr.Row():
                     with gr.Column():
