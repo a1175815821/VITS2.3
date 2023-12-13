@@ -407,14 +407,18 @@ if __name__ == "__main__":
                 text = gr.TextArea(
                     label="输入文本内容",
                     placeholder="""
-                推荐不同语言分开推理，因为无法连贯且可能影响最终效果！
-                如果选择语言为\'mix\'，必须按照格式输入，否则报错:
-                格式举例(zh是中文，jp是日语，en是英语；不区分大小写):
-                [说话人]<zh>你好 <jp>こんにちは <en>Hello
-                另外，所有的语言选项都可以用'|'分割长段实现分句生成。
+               推荐不同语言分开推理，因为无法连贯且可能影响最终效果！
+               如果选择语言为\'mix\'，必须按照格式输入，否则报错:
+               格式举例(zh是中文，jp是日语，en是英语；不区分大小写):
+               [说话人]<zh>你好 <jp>こんにちは <en>Hello
+               另外，所有的语言选项都可以用'|'分割长段实现分句生成。
                     """,
                 )
-
+                trans = gr.Button("中翻日", variant="primary")
+                slicer = gr.Button("快速切分", variant="primary")
+                speaker = gr.Dropdown(
+                    choices=speakers, value=speakers[0], label="Speaker"
+                )
                 _ = gr.Markdown(
                     value="提示模式（Prompt mode）：可选文字提示或音频提示，用于生成文字或音频指定风格的声音。\n"
                 )
@@ -447,7 +451,7 @@ if __name__ == "__main__":
                 language = gr.Dropdown(
                     choices=languages, value=languages[0], label="Language"
                 )
-                btn = gr.Button("点击生成", variant="primary")
+                btn = gr.Button("生成音频！", variant="primary")
             with gr.Column():
                 with gr.Row():
                     with gr.Column():
