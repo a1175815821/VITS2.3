@@ -414,11 +414,7 @@ if __name__ == "__main__":
                          另外，所有的语言选项都可以用'|'分割长段实现分句生成。
                     """,
                 )
-                trans = gr.Button("中翻日", variant="primary")
-                slicer = gr.Button("快速切分", variant="primary")
-                speaker = gr.Dropdown(
-                    choices=speakers, value=speakers[0], label="Speaker"
-                )
+
                 _ = gr.Markdown(
                     value="提示模式（Prompt mode）：可选文字提示或音频提示，用于生成文字或音频指定风格的声音。\n"
                 )
