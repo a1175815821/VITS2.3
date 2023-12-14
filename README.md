@@ -1,5 +1,5 @@
 ---
-title: AI星瞳2.3
+title: AI星瞳2.2
 emoji: ⭐
 colorFrom: yellow
 colorTo: blue
