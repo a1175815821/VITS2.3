@@ -382,25 +382,30 @@ if __name__ == "__main__":
     )
     speaker_ids = hps.data.spk2id
     speakers = list(speaker_ids.keys())
-    languages = ["ZH", "JP", "EN", "mix", "auto"]
+    languages = ["ZH", "JP", "EN", "auto", "mix"]
     with gr.Blocks() as app:
         with gr.Row():
             with gr.Column():
+                gr.Markdown(value="""
+               【AI阿梓2.0】在线语音合成（Bert-Vits2 2.3中日英）\n
+                作者：Xz乔希 https://space.bilibili.com/5859321\n
+                声音归属：阿梓从小就很可爱 https://space.bilibili.com/7706705\n
+                【AI合集】https://www.modelscope.cn/studios/xzjosh/Bert-VITS2\n
+                Bert-VITS2项目：https://github.com/Stardust-minus/Bert-VITS2\n
+                使用本模型请严格遵守法律法规！\n
+                发布二创作品请标注本项目作者及链接、作品使用Bert-VITS2 AI生成！\n
+                【提示】手机端容易误触调节，请刷新恢复默认！每次生成的结果都不一样，效果不好请尝试多次生成与调节，选择最佳结果！\n             
+                """)
                 text = gr.TextArea(
                     label="输入文本内容",
                     placeholder="""
-                    如果你选择语言为\'mix\'，必须按照格式输入，否则报错:
-                        格式举例(zh是中文，jp是日语，不区分大小写；说话人举例:gongzi):
-                         [说话人1]<zh>你好，こんにちは！ <jp>こんにちは，世界。
-                         [说话人2]<zh>你好吗？<jp>元気ですか？
-                         [说话人3]<zh>谢谢。<jp>どういたしまして。
-                         ...
-                    另外，所有的语言选项都可以用'|'分割长段实现分句生成。
+               推荐不同语言分开推理，因为无法连贯且可能影响最终效果！
+               如果选择语言为\'mix\'，必须按照格式输入，否则报错:
+               格式举例(zh是中文，jp是日语，en是英语；不区分大小写):
+               [说话人]<zh>你好 <jp>こんにちは <en>Hello
+               另外，所有的语言选项都可以用'|'分割长段实现分句生成。
                     """,
                 )
-                trans = gr.Button("中翻日", variant="primary")
-                slicer = gr.Button("快速切分", variant="primary")
-                formatter = gr.Button("检测语言，并整理为 MIX 格式", variant="primary")
                 speaker = gr.Dropdown(
                     choices=speakers, value=speakers[0], label="Speaker"
                 )
@@ -424,21 +429,21 @@ if __name__ == "__main__":
                     label="Audio prompt", type="filepath", visible=False
                 )
                 sdp_ratio = gr.Slider(
-                    minimum=0, maximum=1, value=0.5, step=0.1, label="SDP Ratio"
+                    minimum=0, maximum=1, value=0.5, step=0.01, label="SDP Ratio"
                 )
                 noise_scale = gr.Slider(
-                    minimum=0.1, maximum=2, value=0.6, step=0.1, label="Noise"
+                    minimum=0.1, maximum=2, value=0.5, step=0.01, label="Noise"
                 )
                 noise_scale_w = gr.Slider(
-                    minimum=0.1, maximum=2, value=0.9, step=0.1, label="Noise_W"
+                    minimum=0.1, maximum=2, value=0.9, step=0.01, label="Noise_W"
                 )
                 length_scale = gr.Slider(
-                    minimum=0.1, maximum=2, value=1.0, step=0.1, label="Length"
+                    minimum=0.1, maximum=2, value=1.0, step=0.01, label="Length"
                 )
                 language = gr.Dropdown(
                     choices=languages, value=languages[0], label="Language"
                 )
-                btn = gr.Button("生成音频！", variant="primary")
+                btn = gr.Button("点击生成", variant="primary")
             with gr.Column():
                 with gr.Accordion("融合文本语义", open=False):
                     gr.Markdown(
@@ -502,12 +507,6 @@ if __name__ == "__main__":
             ],
             outputs=[text_output, audio_output],
         )
-
-        trans.click(
-            translate,
-            inputs=[text],
-            outputs=[text],
-        )
         slicer.click(
             tts_split,
             inputs=[
@@ -539,12 +538,6 @@ if __name__ == "__main__":
             lambda x: load_audio(x),
             inputs=[audio_prompt],
             outputs=[audio_prompt],
-        )
-
-        formatter.click(
-            format_utils,
-            inputs=[text, speaker],
-            outputs=[language, text],
         )
 
     print("推理页面已开启!")
