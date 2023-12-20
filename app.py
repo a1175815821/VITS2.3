@@ -16,6 +16,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 import torch
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+import nltk
+nltk.download('cmudict')
 import utils
 from infer import infer, latest_version, get_net_g, infer_multilang
 import gradio as gr
@@ -267,6 +271,7 @@ def process_text(
     elif language.lower() == "auto":
         _text, _lang = process_auto(text)
         print(f"Text: {_text}\nLang: {_lang}")
+        _lang = [[lang.replace("JA", "JP") for lang in lang_list] for lang_list in _lang]
         audio_list.extend(
             generate_audio_multilang(
                 _text,
