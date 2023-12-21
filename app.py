@@ -392,9 +392,9 @@ if __name__ == "__main__":
         with gr.Row():
             with gr.Column():
                 gr.Markdown(value="""
-               【AI阿梓2.0】在线语音合成（Bert-Vits2 2.3中日英）\n
+               【AI电棍2.0】在线语音合成（Bert-Vits2 2.3中日英）\n
                 作者：Xz乔希 https://space.bilibili.com/5859321\n
-                声音归属：阿梓从小就很可爱 https://space.bilibili.com/7706705\n
+                声音归属：电棍otto https://space.bilibili.com/628845081\n
                 【AI合集】https://www.modelscope.cn/studios/xzjosh/Bert-VITS2\n
                 Bert-VITS2项目：https://github.com/Stardust-minus/Bert-VITS2\n
                 使用本模型请严格遵守法律法规！\n
@@ -450,10 +450,10 @@ if __name__ == "__main__":
                 )
                 btn = gr.Button("点击生成", variant="primary")
             with gr.Column():
-                with gr.Accordion("融合文本语义", open=False):
+                with gr.Accordion("融合文本语义（实验性功能）", open=False):
                     gr.Markdown(
                         value="使用辅助文本的语意来辅助生成对话（语言保持与主文本相同）\n\n"
-                        "**注意**：不要使用**指令式文本**（如：开心），要使用**带有强烈情感的文本**（如：我好快乐！！！）\n\n"
+                        "**注意**：使用**带有强烈情感的文本**（如：我好快乐！！！）\n\n"
                         "效果较不明确，留空即为不使用该功能"
                     )
                     style_text = gr.Textbox(label="辅助文本")
