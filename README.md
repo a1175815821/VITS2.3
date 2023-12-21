@@ -1,8 +1,8 @@
 ---
-title: AI阿梓2.0
-emoji: 👅
+title: AI电棍2.0
+emoji: ♿
 colorFrom: purple
-colorTo: purple
+colorTo: blue
 sdk: gradio
 sdk_version: 3.47.1
 app_file: app.py
