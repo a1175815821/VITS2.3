@@ -394,7 +394,7 @@ if __name__ == "__main__":
                 gr.Markdown(value="""
                【AI七海2.0】在线语音合成（Bert-Vits2 2.3中日英）\n
                 作者：Xz乔希 https://space.bilibili.com/5859321\n
-                声音归属：电棍otto https://space.bilibili.com/628845081\n
+                声音归属：七海Nana7mi https://space.bilibili.com/434334701\n
                 【AI合集】https://www.modelscope.cn/studios/xzjosh/Bert-VITS2\n
                 Bert-VITS2项目：https://github.com/Stardust-minus/Bert-VITS2\n
                 使用本模型请严格遵守法律法规！\n
