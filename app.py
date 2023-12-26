@@ -392,7 +392,7 @@ if __name__ == "__main__":
         with gr.Row():
             with gr.Column():
                 gr.Markdown(value="""
-               【AI电棍2.0】在线语音合成（Bert-Vits2 2.3中日英）\n
+               【AI七海2.0】在线语音合成（Bert-Vits2 2.3中日英）\n
                 作者：Xz乔希 https://space.bilibili.com/5859321\n
                 声音归属：电棍otto https://space.bilibili.com/628845081\n
                 【AI合集】https://www.modelscope.cn/studios/xzjosh/Bert-VITS2\n
@@ -437,7 +437,7 @@ if __name__ == "__main__":
                     minimum=0, maximum=1, value=0.5, step=0.01, label="SDP Ratio"
                 )
                 noise_scale = gr.Slider(
-                    minimum=0.1, maximum=2, value=0.5, step=0.01, label="Noise"
+                    minimum=0.1, maximum=2, value=0.6, step=0.01, label="Noise"
                 )
                 noise_scale_w = gr.Slider(
                     minimum=0.1, maximum=2, value=0.9, step=0.01, label="Noise_W"
