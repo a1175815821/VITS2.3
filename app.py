@@ -437,7 +437,7 @@ if __name__ == "__main__":
                     minimum=0, maximum=1, value=0.5, step=0.01, label="SDP Ratio"
                 )
                 noise_scale = gr.Slider(
-                    minimum=0.1, maximum=2, value=0.6, step=0.01, label="Noise"
+                    minimum=0.1, maximum=2, value=0.5, step=0.01, label="Noise"
                 )
                 noise_scale_w = gr.Slider(
                     minimum=0.1, maximum=2, value=0.9, step=0.01, label="Noise_W"
