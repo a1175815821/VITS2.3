@@ -1,6 +1,6 @@
 ---
-title: AI七海2.0
-emoji: 🦈
+title: AI炫神2.0
+emoji: 🐶
 colorFrom: purple
 colorTo: red
 sdk: gradio
