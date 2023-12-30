@@ -392,9 +392,9 @@ if __name__ == "__main__":
         with gr.Row():
             with gr.Column():
                 gr.Markdown(value="""
-               【AI星瞳2.3】在线语音合成（Bert-Vits2 2.3中日英）\n
+               【AI丁真2.0】在线语音合成（Bert-Vits2 2.3中日英）\n
                 作者：Xz乔希 https://space.bilibili.com/5859321\n
-                声音归属：星瞳_Official https://space.bilibili.com/401315430\n
+                声音归属：理塘丁真 https://space.bilibili.com/1463028352\n
                 【AI合集】https://www.modelscope.cn/studios/xzjosh/Bert-VITS2\n
                 Bert-VITS2项目：https://github.com/Stardust-minus/Bert-VITS2\n
                 使用本模型请严格遵守法律法规！\n
