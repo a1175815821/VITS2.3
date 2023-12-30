@@ -1,8 +1,8 @@
 ---
-title: AI星瞳2.0
-emoji: ⭐
+title: AI丁真2.0
+emoji: 🐎
 colorFrom: purple
-colorTo: blue
+colorTo: gray
 sdk: gradio
 sdk_version: 3.47.1
 app_file: app.py
