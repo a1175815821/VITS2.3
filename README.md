@@ -1,6 +1,6 @@
 ---
 title: AI嘉然2.0
-emoji: 🍬
+emoji: 🍓
 colorFrom: pink
 colorTo: pink
 sdk: gradio
